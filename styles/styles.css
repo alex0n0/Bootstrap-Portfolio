@@ -221,6 +221,18 @@ main .page-contact input:focus, main .page-contact textarea:focus {
   outline: 2px solid #07afa7;
 }
 
+main .page-contact button {
+  background-color: #07afa7;
+  border: none;
+  height: 3rem;
+  color: white;
+  padding: 0px 30px;
+}
+
+main .page-contact button:hover {
+  background-color: #09e0d6;
+}
+
 /**************************************************************************/
 footer {
   -webkit-box-flex: 0;

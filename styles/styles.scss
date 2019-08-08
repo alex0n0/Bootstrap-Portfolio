@@ -208,6 +208,18 @@ main {
         input:focus, textarea:focus {
             outline: 2px solid $color-primary;
         }
+
+        button {
+            background-color: $color-primary;
+            border: none;
+            height: 3rem;
+            color: white;
+            padding: 0px 30px;
+
+            &:hover {
+                background-color: lighten($color-primary, 10%);
+            }
+        }
     }
 }
 /**************************************************************************/
