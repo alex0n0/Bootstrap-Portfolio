@@ -1,0 +1,220 @@
+$color-primary: rgb(7, 175, 167);
+
+$break-sm: 576px;
+$break-md: 768px;
+$break-lg: 992px;
+@mixin break-sm {
+    @media screen and (min-width: $break-sm) {
+        @content;
+    }
+}
+@mixin break-md {
+    @media screen and (min-width: $break-md) {
+        @content;
+    }
+}
+@mixin break-lg {
+    @media screen and (min-width: $break-lg) {
+        @content;
+    }
+}
+@mixin break-xl {
+    @media screen and (min-width: $break-xl) {
+        @content;
+    }
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $color-primary;
+    font-family: 'Georgia', Times, 'Times New Roman', serif;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+/**************************************************************************/
+header {
+    flex: 0 0 auto;
+    background-color: green;
+    .navbar {
+        border-bottom: 2px solid rgb(204, 204, 204);
+        padding: 0px 0px 0px 0px;
+        min-height: 100px;
+        .navbar-toggler {
+            width: 100%;
+            @include break-sm {
+                margin: 0px 16px 0px 0px;
+                width: auto;
+            }
+        }
+        .navbar-brand {
+            background-color: $color-primary;
+            height: 100px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white !important;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            margin-right: 0px;
+            @include break-sm {
+                padding: 0px 50px;
+                width: auto;
+            }
+        }
+    }
+    .navbar-light {
+        background-color: white !important;
+    }
+
+    li {
+        .nav-link {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+        }
+        @include break-lg {
+            &:last-child {
+                .nav-link {
+                    &::after {
+                        content: '';
+                        display: none;
+                    }
+                }
+            }
+            .nav-link {
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    right: 0px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    height: 50%;
+                    width: 1px;
+                    background-color: rgb(210, 210, 210);
+                }
+            }
+        }
+    } 
+}
+/**************************************************************************/
+main {
+    flex: 1 1 auto;
+    background: url('../assets/interlaced.png');
+
+    .container-fluid {
+        @include break-sm {
+            max-width: 1000px;
+            margin: 16px 0px !important;
+        }
+    }
+    section {
+        background-color: white;
+        border: 1px solid rgb(223, 223, 223);
+        color: rgb(137, 137, 137);
+        overflow: hidden;
+        hr {
+            border:none;
+            border-bottom: 2px solid rgb(223, 223, 223);
+
+        }
+    }
+
+    /****
+        specific styling for ABOUT page
+        ****/
+    .page-about {
+        img {
+            float: left;
+            width: 100%;
+            height: auto;
+            @include break-sm {
+                width: 40%;
+                max-width: 250px;
+            }
+            @include break-md {
+                width: 30%;
+                max-width: 250px;
+            }
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    }
+    /****
+        specific styling for PORTFOLIO page
+        ****/
+    .page-portfolio {
+        /****
+            '.item' wraps each portfolio link
+            -> padding used to maintain aspect ratio and consistent size for all items
+            ****/
+        .item {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            padding: 30% 0px;
+            img {
+                z-index: 1;
+                position: absolute;
+                top: 0px;
+                width: 100%;
+                height: auto;
+            }
+            .item-text {
+                position: absolute;
+                z-index: 2;
+                bottom: 10px;
+                background-color: $color-primary;
+                transition: 0.5s all;
+                font-family: 'Times New Roman', Times, serif;
+                color: white;
+            }
+            &:hover {
+                .item-text {
+                    bottom: 50%;
+                    transform: translateY(50%);
+                }
+            }
+        }
+    }
+    /****
+        specific styling for CONTACT page 
+        ****/
+    .page-contact {
+        label, input, textarea {
+            display: block;
+        }
+        input, textarea {
+            border: 2px solid rgb(236, 236, 236);
+        }
+        label:hover {
+            cursor:pointer;
+        }
+        input:focus, textarea:focus {
+            outline: 2px solid $color-primary;
+        }
+    }
+}
+/**************************************************************************/
+footer {
+    flex: 0 0 auto;
+    background-color: rgb(102, 102, 102);
+    border-top: 8px solid $color-primary;
+    color: rgb(165, 165, 165);
+    padding: 40px 0px;
+}
