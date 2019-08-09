@@ -199,6 +199,10 @@ main .page-portfolio .item .item-text {
   color: white;
 }
 
+main .page-portfolio .item:hover {
+  cursor: pointer;
+}
+
 main .page-portfolio .item:hover .item-text {
   bottom: 50%;
   -webkit-transform: translateY(50%);
@@ -218,7 +222,7 @@ main .page-contact label:hover {
 }
 
 main .page-contact input:focus, main .page-contact textarea:focus {
-  outline: 2px solid #07afa7;
+  outline-color: #07afa7;
 }
 
 main .page-contact button {
@@ -230,7 +234,7 @@ main .page-contact button {
 }
 
 main .page-contact button:hover {
-  background-color: #09e0d6;
+  background-color: #08c8be;
 }
 
 /**************************************************************************/
@@ -240,7 +244,7 @@ footer {
           flex: 0 0 auto;
   background-color: #666666;
   border-top: 8px solid #07afa7;
-  color: #a5a5a5;
+  color: #c5c5c5;
   padding: 40px 0px;
 }
 /*# sourceMappingURL=styles.css.map */
