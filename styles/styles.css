@@ -215,6 +215,9 @@ main .page-contact label, main .page-contact input, main .page-contact textarea 
 
 main .page-contact input, main .page-contact textarea {
   border: 2px solid #ececec;
+  padding: 0px 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 main .page-contact label:hover {

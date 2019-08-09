@@ -202,6 +202,9 @@ main {
         }
         input, textarea {
             border: 2px solid rgb(236, 236, 236);
+            padding: 0px 8px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
         label:hover {
             cursor:pointer;
